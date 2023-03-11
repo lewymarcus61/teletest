@@ -125,19 +125,19 @@ def link_handler(update, context):
             #context.bot.send_video(chat_id=update.effective_chat.id, video=open('temp/' + handle.name(), 'rb'), supports_streaming=True)
             time.sleep(3)
             video = open('temp/' + handle.name(), 'rb')
-            bot.send_video(chat_id=USER_ID, video=video, supports_streaming=True, timeout=1000, multipart=True)
+            bot.send_video(chat_id=USER_ID, video=video, supports_streaming=True, timeout=1000)
             
             ses.pause()
             ses.remove_torrent(handle)
 
-            files = [os.path.join('temp', f) for f in os.listdir('temp')]
-            delete_files(files)
+            #files = [os.path.join('temp', f) for f in os.listdir('temp')]
+            #delete_files(files)
 
         except Exception as e:
             context.bot.send_message(chat_id=update.effective_chat.id, text="An error occurred while downloading your file.")
-            files = [os.path.join('temp', f) for f in os.listdir('temp')]
-            delete_files(files)
-            context.bot.send_message(chat_id=update.effective_chat.id, text="Download file has been deleted")
+            #files = [os.path.join('temp', f) for f in os.listdir('temp')]
+            #delete_files(files)
+            #context.bot.send_message(chat_id=update.effective_chat.id, text="Download file has been deleted")
 
     else:
         # Send an error message to the user
