@@ -128,12 +128,12 @@ def link_handler(update, context):
             ses.remove_torrent(handle)
 
             files = [os.path.join('temp', f) for f in os.listdir('temp')]
-            do(delete_files, files)
+            delete_files(files)
 
         except Exception as e:
             context.bot.send_message(chat_id=update.effective_chat.id, text="An error occurred while downloading your file.")
             files = [os.path.join('temp', f) for f in os.listdir('temp')]
-            do(delete_files, files)
+            delete_files(files)
             context.bot.send_message(chat_id=update.effective_chat.id, text="Download file has been deleted")
 
     else:
