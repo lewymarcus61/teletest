@@ -122,7 +122,10 @@ def link_handler(update, context):
             #with open(handle.name(), 'rb') as f:
                 #context.bot.send_document(chat_id=update.effective_chat.id, document=f)
 
-            context.bot.send_video(chat_id=update.effective_chat.id, video=open('temp/' + handle.name(), 'rb'), supports_streaming=True)
+            #context.bot.send_video(chat_id=update.effective_chat.id, video=open('temp/' + handle.name(), 'rb'), supports_streaming=True)
+            time.sleep(3)
+            video = open('temp/' + handle.name(), 'rb')
+            bot.send_video(chat_id=USER_ID, video=video, supports_streaming=True, timeout=1000, multipart=True)
             
             ses.pause()
             ses.remove_torrent(handle)
