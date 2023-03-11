@@ -116,6 +116,8 @@ def link_handler(update, context):
             while (handle.status().state != lt.torrent_status.seeding):
                 time.sleep(3)
 
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Torrent Downloaded")
+            
             # Once the torrent is fully downloaded, send the file back to the user
             with open(handle.name(), 'rb') as f:
                 context.bot.send_document(chat_id=update.effective_chat.id, document=f)
