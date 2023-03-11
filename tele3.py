@@ -119,9 +119,11 @@ def link_handler(update, context):
             context.bot.send_message(chat_id=update.effective_chat.id, text="Torrent Downloaded")
             
             # Once the torrent is fully downloaded, send the file back to the user
-            with open(handle.name(), 'rb') as f:
-                context.bot.send_document(chat_id=update.effective_chat.id, document=f)
+            #with open(handle.name(), 'rb') as f:
+                #context.bot.send_document(chat_id=update.effective_chat.id, document=f)
 
+            context.bot.send_video(chat_id=update.effective_chat.id, video=open('temp' + handle.name(), 'rb'), supports_streaming=True)
+            
             ses.pause()
             ses.remove_torrent(handle)
 
