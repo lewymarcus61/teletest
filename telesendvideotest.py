@@ -12,7 +12,7 @@ def link_command_handler(update, context):
     context.bot.send_message(chat_id=chat_id, text="Sending the video, please wait")
     
     # Replace PATH_TO_VIDEO_FILE with the path to the video file on your server
-    video = open('~/teletest/temp/[Nekomoe kissaten][Nijiyon Animation][10][1080p][JPTC].mp4', 'rb')
+    video = open('[Nekomoe kissaten][Nijiyon Animation][10][1080p][JPTC].mp4', 'rb')
 
     # Replace USER_ID with the ID of the user you want to send the video to
     bot.send_video(chat_id=chat_id, video=video, supports_streaming=True, timeout=1000)
