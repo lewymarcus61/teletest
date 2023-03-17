@@ -15,7 +15,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 # Create a Pyrogram client object and start the bot.
 app = Client('my_bot', api_id, api_hash, bot_token=bot_token)
-video_path = '[AUM] Kanojo, Okarishimasu - 01 [1080p].mp4'
+video_path = 'kazuya_mizuhara.mkv'
 
 
 @app.on_message(filters.command('upload'))
